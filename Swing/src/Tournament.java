@@ -11,6 +11,15 @@ public class Tournament {
     private int numberOfPlayersTournament;
     private int gamesToWinMatch;
 
+    public SwingTest app;
+
+    /**
+     * Creates a tournament object that has access to the GUI
+     * @param application The actual GUI application
+     */
+    public Tournament(SwingTest application){
+        app = application;
+    }
 
     public int getNumberOfPlayersTournament() {
         return numberOfPlayersTournament;
@@ -128,6 +137,8 @@ public class Tournament {
 
                 System.out.println("Match Winner: " + currentMatch.getMatchWinner());
 
+                app.getOutputBox().setText("Match Winner: " + currentMatch.getMatchWinner());
+
                 listOfRoundWinners.add(currentMatch.getMatchWinner());
 
                 currentMatchPlayers.remove(currentMatch.getMatchWinner());
@@ -176,6 +187,10 @@ public class Tournament {
         currentMatch.runMatch();
 
         System.out.println("CONGRATULATIONS! " + currentMatch.getMatchWinner() + " has won the tournament!");
+
+        // Here we have a reference to the actual SwingTest application that has all the GUI access
+        // so when we use "getOutputBox", we are referring to the actual output box in the GUI
+        app.getOutputBox().setText("CONGRATULATIONS! " + currentMatch.getMatchWinner() + " has won the tournament!");
         
         /*for (int i = 0; i < listOfPlayers.size(); i+=2) {
             System.out.println(i);
