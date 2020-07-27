@@ -51,6 +51,8 @@ public class SwingTest {
 
     public SwingTest() {
 
+        SwingTest application = this;
+
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,7 +93,7 @@ public class SwingTest {
                         throw new IllegalStateException("Unexpected value: " + stringGamesInMatch);
                 }
 
-                Tournament currentTournament = new Tournament();
+                Tournament currentTournament = new Tournament(application);
 
                 currentTournament.getNumberOfPlayersTournament();
                 currentTournament.setNumberOfPlayersTournament(numberofPlayers);
