@@ -1,8 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.PrintWriter;
-import java.io.File;
 
 
 public class SwingTest {
@@ -12,6 +10,8 @@ public class SwingTest {
     private JComboBox comboBoxNumberOfPlayers;
     private JTextArea outputBox;
     private JComboBox comboBoxGamesInMatch;
+    private JButton importPlayerNameFileButton;
+    private JButton HelpButton;
 
     public JComboBox getComboBoxNumberOfPlayers() {
         return comboBoxNumberOfPlayers;
@@ -42,7 +42,7 @@ public class SwingTest {
         frame.setContentPane(new SwingTest().PanelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(500, 500);
+        frame.setSize(1000, 1000);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
@@ -62,6 +62,8 @@ public class SwingTest {
         playTournamentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                outputBox.setLineWrap(true);
 
                 String stringNumberofPlayers = getComboBoxNumberOfPlayers().getSelectedItem().toString();
 
@@ -114,7 +116,19 @@ public class SwingTest {
         });
 
 
+        HelpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame helpFrame = new JFrame("help");
+                helpFrame.setContentPane(new HelpForm(helpFrame).getHelpPanel());
+                helpFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+                helpFrame.pack();
+                helpFrame.setSize(1000, 1000);
+                helpFrame.setLocationRelativeTo(null);
+                helpFrame.setVisible(true);
             }
+        });
+    }
 
 
 }
