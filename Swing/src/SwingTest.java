@@ -11,7 +11,6 @@ public class SwingTest {
     private JComboBox comboBoxNumberOfPlayers;
     private JTextArea outputBox;
     private JComboBox comboBoxGamesInMatch;
-    private JButton importPlayerNameFileButton;
     private JButton HelpButton;
 
     public JComboBox getComboBoxNumberOfPlayers() {

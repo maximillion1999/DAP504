@@ -40,8 +40,6 @@ public class Tournament {
 
     public void runTournament() throws IOException {
 
-        ReadJson.GSONMethod();
-
         app.getOutputBox().setText(null);
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd_MM_yyyy HH.mm.ss");
@@ -50,8 +48,8 @@ public class Tournament {
         String fileSeparator = System.getProperty("file.separator");
 
         //absolute file name with path
-        String absoluteFilePath = fileSeparator + (numberOfPlayersTournament + "players " + dtf.format(now) + ".txt");
-        File file = new File(numberOfPlayersTournament + " Players " + dtf.format(now) + ".txt");
+        String absoluteFilePath = fileSeparator + "Tournament Outputs" + fileSeparator + (numberOfPlayersTournament + "players " + dtf.format(now) + ".txt");
+        File file = new File("Tournament Outputs" + fileSeparator + (numberOfPlayersTournament + "players " + dtf.format(now) + ".txt"));
         try {
             if (file.createNewFile()) {
                 //System.out.println(absoluteFilePath + " File Created");
@@ -79,7 +77,17 @@ public class Tournament {
                 "Player107", "Player108", "Player109", "Player110", "Player111", "Player112", "Player113", "Player114", "Player115", "Player116", "Player117",
                 "Player118", "Player119", "Player120", "Player121", "Player122", "Player123", "Player124", "Player125", "Player126", "Player127", "Player128"};
 
-        List<String> potentialPlayersList = Arrays.asList(potentialPlayers);
+//        ReadJson.GSONMethod();
+//
+//        List<String> potentialPlayersList = Arrays.asList(potentialPlayers);
+
+        List<String> potentialPlayersList = ReadJson.GSONMethod();
+        List<String> potentialPlayersListLOCAL = Arrays.asList(potentialPlayers);
+
+        if (potentialPlayersList.size() != 128){
+            potentialPlayersList.isEmpty();
+            potentialPlayersList = potentialPlayersListLOCAL;
+        }
 
         List<String> listOfPlayers = new ArrayList<>();
         List<String> listOfRoundWinners = new ArrayList<>();
@@ -149,7 +157,7 @@ public class Tournament {
         while (listOfPlayers.size() > 2) {
 
             System.out.print("The players of this round are:");
-            for (String listOfPlayer : listOfPlayers) System.out.print(" " + listOfPlayer);
+            for (String listOfPlayer : listOfPlayers) System.out.print(" " + listOfPlayer + ",");
 
             app.getOutputBox().append("\n" + "The players of this round are:");
             for (String listOfPlayer : listOfPlayers) app.getOutputBox().append(" " + listOfPlayer);
@@ -215,7 +223,7 @@ public class Tournament {
 
 
 
-            System.out.println("The losers of this round are:");
+            System.out.print("The losers of this round are:");
             for (String roundLoser : roundLosers) {
                 System.out.print(" " + (roundLoser));
             }
