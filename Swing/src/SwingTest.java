@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 
 public class SwingTest {
@@ -101,7 +102,11 @@ public class SwingTest {
                 currentTournament.setNumberOfPlayersTournament(numberofPlayers);
                 currentTournament.setGamesToWinMatch(gamesToWinMatch);
 
-                currentTournament.runTournament();
+                try {
+                    currentTournament.runTournament();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
 /*
                 Match currentMatch = new Match();
 
