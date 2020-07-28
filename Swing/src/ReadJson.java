@@ -1,15 +1,47 @@
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-
+import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ReadJson {
 
+
     private String playerName;
+
+    public static void GSONMethod() {
+
+        System.out.println("GSON");
+
+        String jsonFile = "players.json";
+
+        Gson gsonimport = new Gson();
+
+
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader(jsonFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        JsonReader jsonReader = new JsonReader(fileReader);
+
+        ReadJson[] data = gsonimport.fromJson(jsonReader, JSONImportToArray.class);
+
+        ArrayList playersList = new ArrayList();
+
+        for (ReadJson readJson : data) {
+
+            playersList.add(readJson.getPlayerName());
+            System.out.println(readJson.getPlayerName());
+        }
+
+        System.out.println(playersList);
+
+    }
 
     public String getPlayerName() {
         return playerName;
@@ -35,30 +67,21 @@ public class ReadJson {
     List<String> potentialPlayersList = Arrays.asList(potentialPlayers);
 
 
-    static void GSONMethod() throws IOException {
+    }
 
-        System.out.println("GSON");
+    class JSONImportToArray {
 
-        String jsonFile = "players.json";
+    private String[] JSONImport;
 
-        Gson gsonimport = new Gson();
+    public static void setArrayFromJSON(){
+        System.out.println("Is this even fucking working?");
 
-        FileReader fileReader = new FileReader(jsonFile);
 
-        JsonReader jsonReader = new JsonReader(fileReader);
 
-        ReadJson[] data = gsonimport.fromJson(jsonReader, ReadJson.class);
-
-        List<String> playersList = new ArrayList();
-
-        for (ReadJson readJson : data) {
-
-            playersList.add(readJson.getPlayerName());
         }
-
-        System.out.println(playersList);
 
 
     }
 
-}
+
+

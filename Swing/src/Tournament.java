@@ -1,13 +1,9 @@
-import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.io.File;
-import java.lang.Object;
 import java.io.BufferedWriter;
 
 public class Tournament {
@@ -43,6 +39,8 @@ public class Tournament {
     }
 
     public void runTournament() throws IOException {
+
+        ReadJson.GSONMethod();
 
         app.getOutputBox().setText(null);
 
