@@ -125,6 +125,7 @@ public class SwingTest {
                 helpFrame.setSize(1000, 1000);
                 helpFrame.setLocationRelativeTo(null);
                 helpFrame.setVisible(true);
+
             }
         });
     }

@@ -1,0 +1,24 @@
+The Simulation has begun.
+
+The players of this round are: Geoff Myers, Dan Dorricott, Emily, Sam, Player5, Player6, Player7, Player8,
+Geoff Myers VS Dan Dorricott
+Match Winner: Geoff Myers
+Emily VS Sam
+Match Winner: Sam
+Player5 VS Player6
+Match Winner: Player6
+Player7 VS Player8
+Match Winner: Player8
+The winners of this round are: Geoff Myers, Sam, Player6, Player8,
+The losers of this round are: Dan Dorricott, Emily, Player5, Player7,
+The players of this round are: Geoff Myers, Sam, Player6, Player8,
+Geoff Myers VS Sam
+Match Winner: Sam
+Player6 VS Player8
+Match Winner: Player8
+The winners of this round are: Sam, Player8,
+The losers of this round are: Geoff Myers, Player6,
+
+***********************FINAL ROUND***********************
+Sam VS Player8
+CONGRATULATIONS! Player8 has won the tournament!

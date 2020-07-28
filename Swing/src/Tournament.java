@@ -160,10 +160,10 @@ public class Tournament {
             for (String listOfPlayer : listOfPlayers) System.out.print(" " + listOfPlayer + ",");
 
             app.getOutputBox().append("\n" + "The players of this round are:");
-            for (String listOfPlayer : listOfPlayers) app.getOutputBox().append(" " + listOfPlayer);
+            for (String listOfPlayer : listOfPlayers) app.getOutputBox().append(" " + listOfPlayer + ",");
 
             bw.write("The players of this round are:");bw.flush();
-            for (String listOfPlayer : listOfPlayers) bw.write(" " + listOfPlayer);bw.flush();bw.newLine();
+            for (String listOfPlayer : listOfPlayers) bw.write(" " + listOfPlayer + ",");bw.flush();bw.newLine();
 
             System.out.println();
             app.getOutputBox().append("\n");
@@ -201,22 +201,20 @@ public class Tournament {
             }
 
             System.out.print("The winners of this round are:");
-            for (String listOfRoundWinner : listOfRoundWinners) {
-                System.out.print(" " + (listOfRoundWinner));
-            }
+            for (String listOfRoundWinner : listOfRoundWinners) System.out.print(" " + (listOfRoundWinner) + ",");
             System.out.println();
 
 
             app.getOutputBox().append("The winners of this round are:");
             for (String listOfRoundWinner : listOfRoundWinners) {
-                app.getOutputBox().append(" " + (listOfRoundWinner));
+                app.getOutputBox().append(" " + (listOfRoundWinner) + ",");
             }
             app.getOutputBox().append("\n");
 
 
             bw.write("The winners of this round are:");
             for (String listOfRoundWinner : listOfRoundWinners) {
-                bw.write(" " + (listOfRoundWinner));
+                bw.write(" " + (listOfRoundWinner) + ",");
             }
             bw.write("\n");
 
@@ -225,21 +223,21 @@ public class Tournament {
 
             System.out.print("The losers of this round are:");
             for (String roundLoser : roundLosers) {
-                System.out.print(" " + (roundLoser));
+                System.out.print(" " + (roundLoser) + ",");
             }
             System.out.println();
 
 
             app.getOutputBox().append("The losers of this round are:");
             for (String roundLoser : roundLosers) {
-                app.getOutputBox().append(" " + (roundLoser));
+                app.getOutputBox().append(" " + (roundLoser) + ",");
             }
             app.getOutputBox().append("\n");
 
 
             bw.write("The losers of this round are:");
             for (String roundLoser : roundLosers) {
-                bw.write(" " + (roundLoser));
+                bw.write(" " + (roundLoser) + ",");
             }
             bw.write("\n");
 
