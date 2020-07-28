@@ -96,6 +96,12 @@ public class SwingTest {
                         throw new IllegalStateException("Unexpected value: " + stringGamesInMatch);
                 }
 
+                try {
+                    ReadJson.GSONMethod();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+
                 Tournament currentTournament = new Tournament(application);
 
                 currentTournament.getNumberOfPlayersTournament();
@@ -107,12 +113,6 @@ public class SwingTest {
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
-/*
-                Match currentMatch = new Match();
-
-                currentMatch.setMinWinPoints(gamesToWinMatch);
-
-                currentMatch.runMatch();*/
 
 
 
