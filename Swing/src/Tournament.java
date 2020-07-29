@@ -53,7 +53,7 @@ public class Tournament {
         try {
             if (file.createNewFile()) {
                 //System.out.println(absoluteFilePath + " File Created");
-            } else System.out.println("File " + absoluteFilePath + " already exists");
+            } //else System.out.println("File " + absoluteFilePath + " already exists");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -92,7 +92,7 @@ public class Tournament {
         List<String> listOfPlayers = new ArrayList<>();
         List<String> listOfRoundWinners = new ArrayList<>();
 
-        System.out.println("The Simulation has begun.");
+        //System.out.println("The Simulation has begun.");
         app.getOutputBox().setText(null);
         bw.write("The Simulation has begun."); bw.newLine();bw.newLine();
         bw.flush();
@@ -156,8 +156,8 @@ public class Tournament {
 
         while (listOfPlayers.size() > 2) {
 
-            System.out.print("The players of this round are:");
-            for (String listOfPlayer : listOfPlayers) System.out.print(" " + listOfPlayer + ",");
+            //System.out.print("The players of this round are:");
+            //for (String listOfPlayer : listOfPlayers) System.out.print(" " + listOfPlayer + ",");
 
             app.getOutputBox().append("\n" + "The players of this round are:");
             for (String listOfPlayer : listOfPlayers) app.getOutputBox().append(" " + listOfPlayer + ",");
@@ -165,7 +165,7 @@ public class Tournament {
             bw.write("The players of this round are:");bw.flush();
             for (String listOfPlayer : listOfPlayers) bw.write(" " + listOfPlayer + ",");bw.flush();bw.newLine();
 
-            System.out.println();
+            //System.out.println();
             app.getOutputBox().append("\n");
 
             for (int i = 0; i < listOfPlayers.size(); i += 2) {
@@ -182,11 +182,11 @@ public class Tournament {
 
                 currentMatch.runMatch();
 
-                System.out.println(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1));
+                //System.out.println(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1));
                 app.getOutputBox().append(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1) + "\n");
                 bw.write(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1) + "\n");bw.flush();
 
-                System.out.println("Match Winner: " + currentMatch.getMatchWinner());
+                //System.out.println("Match Winner: " + currentMatch.getMatchWinner());
                 app.getOutputBox().append("Match Winner: " + currentMatch.getMatchWinner() + "\n");
                 bw.write("Match Winner: " + currentMatch.getMatchWinner() + "\n");bw.flush();
 
@@ -200,9 +200,9 @@ public class Tournament {
 
             }
 
-            System.out.print("The winners of this round are:");
+           /* System.out.print("The winners of this round are:");
             for (String listOfRoundWinner : listOfRoundWinners) System.out.print(" " + (listOfRoundWinner) + ",");
-            System.out.println();
+            System.out.println();*/
 
 
             app.getOutputBox().append("The winners of this round are:");
@@ -221,11 +221,13 @@ public class Tournament {
 
 
 
+            /*
             System.out.print("The losers of this round are:");
             for (String roundLoser : roundLosers) {
-                System.out.print(" " + (roundLoser) + ",");
+            System.out.print(" " + (roundLoser) + ",");
             }
             System.out.println();
+            */
 
 
             app.getOutputBox().append("The losers of this round are:");
@@ -256,12 +258,12 @@ public class Tournament {
         currentMatchPlayers.add(listOfPlayers.get(0));
         currentMatchPlayers.add(listOfPlayers.get(1));
 
-        System.out.println("\n***********************FINAL ROUND***********************");
+        //System.out.println("\n***********************FINAL ROUND***********************");
         app.getOutputBox().append("\n***********************FINAL ROUND***********************" + "\n");
         bw.write("\n***********************FINAL ROUND***********************" + "\n");
 
 
-        System.out.println(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1));
+        //System.out.println(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1));
         app.getOutputBox().append(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1) + "\n");
         bw.write(currentMatchPlayers.get(0) + " VS " + currentMatchPlayers.get(1) + "\n");
 
@@ -275,7 +277,7 @@ public class Tournament {
 
         currentMatch.runMatch();
 
-        System.out.println("CONGRATULATIONS! " + currentMatch.getMatchWinner() + " has won the tournament!");
+        //System.out.println("CONGRATULATIONS! " + currentMatch.getMatchWinner() + " has won the tournament!");
         app.getOutputBox().append("CONGRATULATIONS! " + currentMatch.getMatchWinner() + " has won the tournament!\n");
         bw.write("CONGRATULATIONS! " + currentMatch.getMatchWinner() + " has won the tournament!");
         bw.flush();

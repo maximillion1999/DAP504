@@ -17,8 +17,6 @@ public class ReadJson {
     //  public static void GSONMethod() {
     public static List<String> GSONMethod() throws FileNotFoundException {
 
-        System.out.println("GSON");
-
         String jsonFile = "players.json";
 
 //        Gson gsonimport = new Gson();

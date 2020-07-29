@@ -21,7 +21,8 @@ public class HelpForm {
     }
 
     public void setBackToHomeScreenButton(JButton backToHomeScreenButton) {
-        this.backToHomeScreenButton = backToHomeScreenButton;}
+        this.backToHomeScreenButton = backToHomeScreenButton;
+    }
 
     public String helptext = "TABLE TENNIS TOURNAMENT SIMULATOR README\n" +
             "\n" +
@@ -46,23 +47,18 @@ public class HelpForm {
             "Please click the below button to return to the main menu. ";
 
 
-
     public HelpForm(JFrame helpForm) {
         HelpForm = helpForm;
 
         helpTextArea.append(helptext);
 
+
         backToHomeScreenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                disposeJFrame(helpForm);
+                HelpForm.dispose();
+                HelpForm.setVisible(false);
             }
         });
     }
-
-    private void disposeJFrame(JFrame HelpForm){
-        HelpForm.setVisible(false);
-        HelpForm.dispose();
-    }
-
-    }
+}

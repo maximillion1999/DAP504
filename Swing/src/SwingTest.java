@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 
-public class SwingTest {
+public class SwingTest extends JFrame {
     private JButton playTournamentButton;
     private JPanel PanelMain;
     private JButton exitButton;
@@ -49,7 +49,7 @@ public class SwingTest {
 
     }
 
-    public SwingTest() {
+    SwingTest() {
 
         SwingTest application = this;
 
@@ -117,7 +117,7 @@ public class SwingTest {
 
         HelpButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed (ActionEvent e)  {
                 JFrame helpFrame = new JFrame("help");
                 helpFrame.setContentPane(new HelpForm(helpFrame).getHelpPanel());
                 helpFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
